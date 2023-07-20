@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  front:
+    image: node:18
+    ports:
+      - 3000:3000 #El primero es el privado, y el segundo el de fuera
+    volumes:
+      - ./front:/usr/src #Esto quiere decir mi carpeta front cargala en el directorio usr/src del contenedor
+    command: bash -c "cd /usr/src && npm run dev"
